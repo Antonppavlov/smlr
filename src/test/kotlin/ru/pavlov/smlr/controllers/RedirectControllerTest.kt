@@ -32,7 +32,7 @@ class RedirectControllerTest {
     lateinit var mockMvc: MockMvc
 
 
-    private val PATH = "a"
+    private val PATH = "aaaaaa"
     private val BAD_PATH = "b"
     private val REDIRECT_STATUS: Int = 302
     private val NOT_FOUD_STATUS: Int = 404
