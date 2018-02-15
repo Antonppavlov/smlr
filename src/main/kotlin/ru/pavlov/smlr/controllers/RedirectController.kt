@@ -11,35 +11,26 @@ import javax.servlet.http.HttpServletResponse
 @Controller
 @RequestMapping("{key}")
 class RedirectController {
-    private val HEADER_NAME = "Location"
-    private val HEADER_VALUE = "http://www.eveonline.com"
 
     @Autowired
     lateinit var service: KeyMapperService
 
     @RequestMapping
     fun redirect(@PathVariable("key") key: String, response: HttpServletResponse) {
-        val resualt = service.getLink(key)
+        val result = service.getLink(key)
 
-        when (resualt) {
+        when (result) {
             is KeyMapperService.Get.Link -> {
-                response.setHeader(HEADER_NAME, resualt.link)
+                response.setHeader(HEADER_NAME, result.link)
                 response.status = 302
             }
             is KeyMapperService.Get.LinkNotFound ->{
                 response.status = 404
             }
         }
+    }
 
-
-//        while (resual) {
-//            if (key == "aaaaaa") {
-//                response.setHeader(HEADER_NAME, HEADER_VALUE)
-//                response.status = 302
-//            } else {
-//                response.status = 404
-//            }
-//        }
-
+    companion object {
+        private val HEADER_NAME = "Location"
     }
 }
