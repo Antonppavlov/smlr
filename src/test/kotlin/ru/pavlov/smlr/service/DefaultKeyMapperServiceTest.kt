@@ -10,22 +10,24 @@ import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 
 class DefaultKeyMapperServiceTest {
+    companion object {
+        private val KEY: String = "aaaaaa"
+        private val LINK_A: String = "https://www.google.ru/"
+        private val LINK_B: String = "https://www.yandex.ru/"
+
+
+        private val KEY_A: String = "abc"
+        private val ID_A: Long = 10000000L
+        private val KEY_B: String = "cde"
+        private val ID_B: Long = 10000001L
+    }
+
     @InjectMocks
     var service: KeyMapperService = DefaultKeyMapperService()
 
     @Mock
     lateinit var converter: KeyConverterService
 
-
-    private val KEY: String = "aaaaaa"
-    private val LINK_A: String = "https://www.google.ru/"
-    private val LINK_B: String = "https://www.yandex.ru/"
-
-
-    private val KEY_A: String = "abc"
-    private val ID_A: Long = 10000000L
-    private val KEY_B: String = "cde"
-    private val ID_B: Long = 10000001L
 
     @Before
     fun init() {

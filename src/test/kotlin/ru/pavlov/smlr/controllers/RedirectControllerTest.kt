@@ -45,8 +45,8 @@ class RedirectControllerTest {
 
     lateinit var mockMvc: MockMvc
 
-    @Autowired
     @InjectMocks
+    @Autowired
     lateinit var controller: RedirectController
 
     @Mock
@@ -66,7 +66,8 @@ class RedirectControllerTest {
 
     @Test
     fun controllerMustRedirectUsWhenRequestIsSuccessful() {
-        mockMvc.perform(get("/$PATH"))
+        mockMvc.
+                perform(get("/$PATH"))
                 .andExpect(status().`is`(REDIRECT_STATUS))
                 .andExpect(header().string(HEADER_NAME, HEADER_VALUE))
     }

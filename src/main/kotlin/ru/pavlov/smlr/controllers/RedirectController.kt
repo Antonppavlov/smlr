@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletResponse
 @RequestMapping("{key}")
 class RedirectController {
 
+    companion object {
+        private val HEADER_NAME = "Location"
+    }
+
     @Autowired
     lateinit var service: KeyMapperService
 
@@ -28,9 +32,5 @@ class RedirectController {
                 response.status = 404
             }
         }
-    }
-
-    companion object {
-        private val HEADER_NAME = "Location"
     }
 }
