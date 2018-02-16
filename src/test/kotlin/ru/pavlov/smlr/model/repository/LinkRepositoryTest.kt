@@ -50,7 +50,7 @@ open class LinkRepositoryTest : AbstractRepositoryTest() {
         assertThat(repository.findAll(), hasSize(3))
 
         val toBeSaved = Link(LINK_TBS_TEXT)
-        val got: Link = repository.save(toBeSaved)
+         val got: Link = repository.save(toBeSaved)
 
         assertThat(repository.findAll(), hasSize(4))
 
