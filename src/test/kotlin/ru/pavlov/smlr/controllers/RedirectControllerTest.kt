@@ -42,14 +42,15 @@ class RedirectControllerTest {
 
     @Autowired
     lateinit var webApplicationContext: WebApplicationContext
-    lateinit var mockMvc: MockMvc
 
-    @Mock
-    lateinit var service: KeyMapperService
+    lateinit var mockMvc: MockMvc
 
     @Autowired
     @InjectMocks
     lateinit var controller: RedirectController
+
+    @Mock
+    lateinit var service: KeyMapperService
 
 
     @Before
