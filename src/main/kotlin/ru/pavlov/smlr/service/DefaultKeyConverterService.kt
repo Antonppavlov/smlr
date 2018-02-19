@@ -8,7 +8,7 @@ class DefaultKeyConverterService : KeyConverterService {
     val chars = "qwertyuiopQWERTYUIOP-_".toCharArray()
 
     val charToLong =
-            (0..chars.size - 1)
+            (0 until chars.size)
                     .map { i -> Pair(chars[i], i.toLong()) }
                     .toMap()
 

@@ -28,7 +28,7 @@ class RedirectController {
                 response.setHeader(HEADER_NAME, result.link)
                 response.status = 302
             }
-            is KeyMapperService.Get.LinkNotFound ->{
+            is KeyMapperService.Get.LinkNotFound -> {
                 response.status = 404
             }
         }
