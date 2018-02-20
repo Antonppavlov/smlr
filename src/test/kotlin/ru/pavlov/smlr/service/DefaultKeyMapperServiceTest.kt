@@ -15,7 +15,6 @@ class DefaultKeyMapperServiceTest {
         private val LINK_A: String = "https://www.google.ru/"
         private val LINK_B: String = "https://www.yandex.ru/"
 
-
         private val KEY_A: String = "abc"
         private val ID_A: Long = 10000000L
         private val KEY_B: String = "cde"
@@ -28,7 +27,6 @@ class DefaultKeyMapperServiceTest {
     @Mock
     lateinit var converter: KeyConverterService
 
-
     @Before
     fun init() {
         MockitoAnnotations.initMocks(this)
@@ -36,7 +34,6 @@ class DefaultKeyMapperServiceTest {
         Mockito.`when`(converter.idToKey(ID_A)).thenReturn(KEY_A)
         Mockito.`when`(converter.keyToId(KEY_B)).thenReturn(ID_B)
         Mockito.`when`(converter.idToKey(ID_B)).thenReturn(KEY_B)
-
     }
 
     @Test

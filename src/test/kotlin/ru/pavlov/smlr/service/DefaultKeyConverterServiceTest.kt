@@ -16,6 +16,5 @@ class DefaultKeyConverterServiceTest {
             val id = service.keyToId(key)
             Assert.assertEquals(initialId, id)
         }
-
     }
 }

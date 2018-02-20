@@ -2,17 +2,16 @@ package ru.pavlov.smlr.service
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
-import org.thymeleaf.util.NumberUtils.sequence
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.atomic.AtomicLong
 
 @Component
 class DefaultKeyMapperService : KeyMapperService {
 
-    private val map: MutableMap<Long, String> = ConcurrentHashMap()
-
     @Autowired
     lateinit var converter: KeyConverterService
+
+    private val map: MutableMap<Long, String> = ConcurrentHashMap()
 
     val sequence = AtomicLong(10000000L)
 

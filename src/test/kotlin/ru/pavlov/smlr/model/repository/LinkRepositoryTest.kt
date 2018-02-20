@@ -8,7 +8,6 @@ import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.hasSize
 import org.junit.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.test.context.TestPropertySource
 import ru.pavlov.smlr.model.AbstractRepositoryTest
 import ru.pavlov.smlr.model.Link
 import ru.pavlov.smlr.model.LinkRepository
@@ -19,9 +18,6 @@ import java.util.*
 @DatabaseTearDown(type = DatabaseOperation.DELETE_ALL, value = LinkRepositoryTest.DATASET)
 open class LinkRepositoryTest : AbstractRepositoryTest() {
 
-    @Autowired
-    lateinit var repository: LinkRepository
-
     companion object {
         const val DATASET = "classpath:datasets/link-table.xml"
         private val LINK_1_ID: Long = 100500
@@ -29,8 +25,10 @@ open class LinkRepositoryTest : AbstractRepositoryTest() {
         private val LINK_TBS_TEXT: String = "http://www.ru"
 
         private val LINK_NOT_FOUND: Long = 1L
-
     }
+
+    @Autowired
+    lateinit var repository: LinkRepository
 
     @Test
     fun findOneExisting() {
@@ -59,6 +57,5 @@ open class LinkRepositoryTest : AbstractRepositoryTest() {
 
         assertThat(got.text, equalTo(LINK_TBS_TEXT))
     }
-
 
 }
