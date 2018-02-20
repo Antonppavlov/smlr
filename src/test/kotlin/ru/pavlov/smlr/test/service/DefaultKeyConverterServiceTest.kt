@@ -1,7 +1,9 @@
-package ru.pavlov.smlr.service
+package ru.pavlov.smlr.test.service
 
 import org.junit.Assert
 import org.junit.Test
+import ru.pavlov.smlr.service.DefaultKeyConverterService
+import ru.pavlov.smlr.service.KeyConverterService
 import java.util.*
 
 class DefaultKeyConverterServiceTest {

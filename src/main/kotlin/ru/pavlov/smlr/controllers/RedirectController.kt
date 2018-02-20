@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import ru.pavlov.smlr.service.KeyMapperService
-import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 @Controller
@@ -28,7 +27,7 @@ class RedirectController {
                 response.setHeader(HEADER_NAME, result.link)
                 response.status = 302
             }
-            is KeyMapperService.Get.LinkNotFound -> {
+            is KeyMapperService.Get.NotFound -> {
                 response.status = 404
             }
         }

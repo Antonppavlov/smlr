@@ -1,4 +1,4 @@
-package ru.pavlov.smlr.model.repository
+package ru.pavlov.smlr.test.model.repository
 
 import com.github.springtestdbunit.annotation.DatabaseOperation
 import com.github.springtestdbunit.annotation.DatabaseSetup
@@ -8,9 +8,9 @@ import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.hasSize
 import org.junit.Test
 import org.springframework.beans.factory.annotation.Autowired
-import ru.pavlov.smlr.model.AbstractRepositoryTest
 import ru.pavlov.smlr.model.Link
 import ru.pavlov.smlr.model.LinkRepository
+import ru.pavlov.smlr.test.model.AbstractRepositoryTest
 import java.util.*
 
 

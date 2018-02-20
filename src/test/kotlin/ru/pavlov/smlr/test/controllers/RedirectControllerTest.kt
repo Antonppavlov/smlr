@@ -1,4 +1,4 @@
-package ru.pavlov.smlr.controllers
+package ru.pavlov.smlr.test.controllers
 
 import org.junit.Before
 import org.junit.Test
@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.web.context.WebApplicationContext
 import ru.pavlov.smlr.SmlrApplication
+import ru.pavlov.smlr.controllers.RedirectController
 import ru.pavlov.smlr.service.KeyMapperService
 
 /**
@@ -63,20 +64,20 @@ class RedirectControllerTest {
                 .build()
 
         Mockito.`when`(service.getLink(PATH)).thenReturn(KeyMapperService.Get.Link(HEADER_VALUE))
-        Mockito.`when`(service.getLink(BAD_PATH)).thenReturn(KeyMapperService.Get.LinkNotFound(BAD_PATH))
+        Mockito.`when`(service.getLink(BAD_PATH)).thenReturn(KeyMapperService.Get.NotFound(BAD_PATH))
     }
 
     @Test
     fun controllerMustRedirectUsWhenRequestIsSuccessful() {
         mockMvc.
-                perform(get("/$PATH"))
+                perform(get("/${PATH}"))
                 .andExpect(status().`is`(REDIRECT_STATUS))
                 .andExpect(header().string(HEADER_NAME, HEADER_VALUE))
     }
 
     @Test
     fun controllerMustReturn404BadKey() {
-        mockMvc.perform(get("/$BAD_PATH"))
+        mockMvc.perform(get("/${BAD_PATH}"))
                 .andExpect(status().`is`(NOT_FOUD_STATUS))
     }
 

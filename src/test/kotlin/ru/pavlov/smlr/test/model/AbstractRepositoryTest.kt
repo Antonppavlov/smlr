@@ -1,7 +1,6 @@
-package ru.pavlov.smlr.model
+package ru.pavlov.smlr.test.model
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener
-import com.github.springtestdbunit.annotation.DbUnitConfiguration
 import org.springframework.boot.test.SpringApplicationConfiguration
 import org.springframework.test.annotation.DirtiesContext
 import org.springframework.test.context.TestExecutionListeners
